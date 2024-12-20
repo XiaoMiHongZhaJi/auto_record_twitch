@@ -210,9 +210,6 @@ def record_stream():
     yt_dlp_command = f'yt-dlp {proxy_text} {URL} -o - | ffmpeg -i pipe:0 -c copy -f segment -segment_time {SEGMENT * 60} -reset_timestamps 1 {FILE_PATH}{filename}_%02d.mp4'
 
     process = subprocess.Popen(yt_dlp_command, shell=True)
-
-    # 定义停止事件
-    stop_event = threading.Event()
     
     monitor_thread = threading.Thread(target=monitor_disk_space, args=(1 * 60, process))
     monitor_thread.start()
