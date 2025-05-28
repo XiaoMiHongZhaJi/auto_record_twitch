@@ -8,7 +8,6 @@ import subprocess
 import platform
 import shutil
 import logging
-import psutil
 
 # vps名称
 VPS_NAME = 'my_vps'
@@ -274,9 +273,6 @@ YOUTUBE_UPLOADER_PATH = '/mnt/twitch/auto/'
 
 # 删除旧的文件
 def cleanup_old_files(files):
-    if len(files) > 22:
-        send_notification("录像上传失败", f"录像文件过多，请手动处理")
-        return False
     delete_filenames = ""
     for file in files:
         old_file_path = os.path.join(FILE_PATH, file)
@@ -405,6 +401,11 @@ def merge_and_upload():
     if not files:
         logging.info("没有找到待上传的mp4文件")
         return
+
+    if len(files) > 24 * SEGMENT / 60:
+        send_notification("录像上传失败", f"录像文件过多，请手动处理")
+        return False
+
     send_notification("录像上传", "准备合并录像文件并上传，文件列表：" + "\n".join(files))
 
     # 清理上传过的文件
@@ -449,8 +450,8 @@ def merge_and_upload():
         if not check_disk_space(new_files):
             return
 
-        # 合并文件
-        if file_count <= 12:
+        # 合并文件 (YouTube 单个视频最长 12 小时)
+        if file_count <= 12 * SEGMENT / 60:
             # 合并为一个文件
             merged_file = merge_files(new_files, upload_title)
             if not merged_file:
