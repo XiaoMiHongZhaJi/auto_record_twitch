@@ -4,7 +4,7 @@
 
 一个简易脚本，实现 <b>twitch 开播检测 + 通知 + 分段录制</b>
 
-可选功能：直播结束后 <b>合并录像文件 + 上传至YouTube</b>
+可选功能：直播结束后 <b>合并录像文件 + 上传至 YouTube</b>
 
 （支持 24 小时以内单次直播）
 
@@ -26,7 +26,7 @@
 
 #### 如需自动上传至YouTube，需要下载 `youtubeuploader`
 
-具体配置方式请参考：https://github.com/porjo/youtubeuploader/releases
+具体配置方式请参考：https://github.com/porjo/youtubeuploader
 
 <hr>
 
