@@ -32,4 +32,4 @@ pip install yt-dlp
 
 使用 `merge.sh 第一个片段.mp4 最后一个片段.mp4` 合并多个片段为一个文件
 
-上传至 YouTube `youtubeuploader -cache yt_request.token -metaJSON yt_meta.json -secrets yt_secrets.json -description '' -filename 2025-05-27.mp4 -title 2025-05-27`
+上传至 YouTube `./youtubeuploader -cache yt_request.token -metaJSON yt_meta.json -secrets yt_secrets.json -description '' -filename 2025-05-27.mp4 -title 2025-05-27`
