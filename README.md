@@ -10,14 +10,15 @@
 
 （去除之前代码中的直播中剩余空间检测功能，不太稳定）
 
+<hr>
+
 ### 使用方式
 
 #### 需要先安装好 ffmpeg 和 yt-dlp
 
-<code>apt install ffmpeg python3 python3-pip -y
+`apt install ffmpeg python3 python3-pip -y`
 
-pip install yt-dlp
-</code>
+`pip install yt-dlp`
 
 <hr>
 
