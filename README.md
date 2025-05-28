@@ -11,22 +11,23 @@
 （去除之前代码中的直播中剩余空间检测功能，不太稳定）
 
 ### 使用方式
-需要先安装好 ffmpeg 和 yt-dlp
 
-<code>
-apt install ffmpeg python3 python3-pip -y
+#### 需要先安装好 ffmpeg 和 yt-dlp
+
+<code>apt install ffmpeg python3 python3-pip -y
 
 pip install yt-dlp
 </code>
 
 <hr>
 
-如需自动上传至YouTube，需要下载 `youtubeuploader`
+#### 如需自动上传至YouTube，需要下载 `youtubeuploader`
 
 具体配置方式请参考：https://github.com/porjo/youtubeuploader/releases
 
 <hr>
-如需手动操作：
+
+#### 如需手动操作：
 
 录制完成后，使用 `cut_15.sh 第一个片段.mp4` 剪掉第一个片段的 twitch 广告
 
